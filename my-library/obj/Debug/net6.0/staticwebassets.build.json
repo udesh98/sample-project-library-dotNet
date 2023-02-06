@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "s/RDkCSOTToeM1mB8/DQpEhxyFqYoUPCTZWjaRjckIU=",
+  "Source": "my-library",
+  "BasePath": "_content/my-library",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

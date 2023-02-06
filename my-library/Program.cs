@@ -1,4 +1,16 @@
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using my_library.Data;
+using my_library.Data.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure DbContext with SQL
+var ConnectionString = builder.Configuration.GetConnectionString("DefaultConnectionString");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
+
+// Configure the Services
+builder.Services.AddTransient<BooksService>();
 
 // Add services to the container.
 
@@ -21,5 +33,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Seeding database with some initial data
+AppDbInitializer.Seed(app);
 
 app.Run();
