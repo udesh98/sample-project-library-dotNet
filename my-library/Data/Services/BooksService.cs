@@ -1,4 +1,5 @@
-﻿using my_library.Data.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using my_library.Data.Models;
 using my_library.Data.ViewModels;
 
 namespace my_library.Data.Services
@@ -27,6 +28,16 @@ namespace my_library.Data.Services
             };
             _context.Books.Add(_book);
             _context.SaveChanges();
+        }
+
+        public List<Book> GetAllBooks()
+        {
+            return _context.Books.ToList();
+        }
+
+        public Book GetBookById(int bookId)
+        {
+            return _context.Books.FirstOrDefault(i => i.Id == bookId);
         }
     }
 }
