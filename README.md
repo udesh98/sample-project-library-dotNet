@@ -1,3 +1,3 @@
 # sample-project-library-dotNet
 
-# Sample web app for library management
+# Sample web api for library management using .net core
